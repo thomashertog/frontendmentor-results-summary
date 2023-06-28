@@ -24,9 +24,10 @@ body {
     font-weight: 500;
     font-family: "Hanken Grotesk";
     display: grid;
+    place-content: center;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 5px -5px var(--light-lavender);
@@ -77,7 +78,7 @@ header {
     font-size: 3rem;
 }
 
-.max{
+.max {
     color: hsla(var(--dark-gray-blue), .5);
 }
 
@@ -126,7 +127,7 @@ h2 {
     --item-color: var(--cobalt-blue);
 }
 
-button{
+button {
     background-color: hsl(var(--dark-gray-blue));
     color: white;
     text-align: center;
@@ -137,29 +138,33 @@ button{
     cursor: pointer;
 }
 
-button:hover{
-    background: linear-gradient(
-        var(--light-slate-blue), 
-        var(--light-royal-blue));
+button:hover {
+    background: linear-gradient(var(--light-slate-blue),
+            var(--light-royal-blue));
 }
 
 @media screen and (min-width: 50rem) {
-    .container{
+    .container {
         flex-direction: initial;
         justify-content: center;
-        margin: auto;
         border-radius: 1.5em;
-
+        width: clamp(50rem, 85vw, 60rem);
     }
 
-    header{
+    header {
         max-width: 20rem;
         border-radius: var(--border-radius);
         margin: 0;
     }
 
-    main{
+    main {
         flex-grow: 1;
         padding-block: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 50rem) {
+    .container {
+        min-height: 100vh;
     }
 }
